@@ -1,37 +1,92 @@
 var xhr = new XMLHttpRequest();
-var url = "https://api.nasa.gov/planetary/apod?api_key=E59VpXBeGaT62IUG3cO94dijUoXmCC5kcbmwoNyz"
+var url = "https://pokeapi.co/api/v2/pokemon/?limit=809"
 
-xhr.open("GET", url, true);
-xhr.send(null);
+$("#submit").on("click",function() {
+	// ($"body").empty()
 
-xhr.onload = function(){
-	if(xhr.status == 200){
+// 	query = "&count=3"
+// 	callAPI()
 
-		// document.write(xhr.responseText)
+// function callAPI () {
+// 	var url = url1 + ur12 + url3 + query;
 
-		var nasaData = JSON.parse(xhr.responseText)
+	xhr.open("GET", url, true);
+	xhr.send(null);
 
-		console.log(data)
+	xhr.onload = function(){
+		if(xhr.status == 200){
+			// document.write(xhr.responseText)	
 
-		if(data.media_type == "video"){
-			var youtube = '<iframe width="560" height="315" src="' + data.url + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-			// var newVideo = $("<video>")
-			// var newSrc = $("<source>")
-			// newSrc.attr("type", "video/mp4")
-			// newSrc.attr("src", data.url)
+			console.log(xhr.responseText);
+			var data = JSON.parse(xhr.responseText);
+			// console.log(data.results.name)
+			var name = data.results[Math.floor((Math.random() * 808)+ 1)].name
 
-			// newVideo.html(newSrc)
-			$("body").prepend(youtube)
+			// var ability = data.abilities[0]
+			// var sprite = data.sprites
+			console.log(data)
+			// var name = data[0].url
+
+			// console.log(data.ability)
+
+			$("body").append("<h2>"	+ name +	"</h2>");
 
 
-			 } else if (data.media_type == "image") {
+}}
 
-			 var newImage = $("<img>")
-			 newImage.attr("src", data.url)
-			 $("body").prepend(newImage)
-		}
+var xhr2 = new XMLHttpRequest();
+var url2 = "https://pokeapi.co/api/v2/ability/?limit=327"
 
-	// 	$("body").prepend("img src='" + nasaData.hdurl + "'>")
-	// }
+	xhr2.open("GET", url2, true);
+	xhr2.send(null);
+
+	xhr2.onload = function(){
+		if(xhr2.status == 200){
+			// document.write(xhr.responseText)	
+
+			console.log(xhr2.responseText);
+			var data2 = JSON.parse(xhr2.responseText);
+			// console.log(data.results.name)
+			var ability = data2.results[Math.floor((Math.random() * 326)+ 1)].name
+
+			// var ability = data.abilities[0]
+			// var sprite = data.sprites
+			console.log(data2)
+			// var name = data[0].url
+
+			// console.log(data.ability)
+			// $("body").append("<img src="	+ sprite +	">");
+			$("body").append("<h3>"	+ ability +	"</h3>");
+
+
 }
 }
+
+
+var xhr3 = new XMLHttpRequest();
+var url3 = "https://pokeapi.co/api/v2/nature/?limit=25"
+
+	xhr3.open("GET", url3, true);
+	xhr3.send(null);
+
+	xhr3.onload = function(){
+		if(xhr3.status == 200){
+			// document.write(xhr.responseText)	
+
+			console.log(xhr3.responseText);
+			var data3 = JSON.parse(xhr3.responseText);
+			// console.log(data.results.name)
+			var nature = data3.results[Math.floor((Math.random() * 24)+ 1)].name
+
+			// var ability = data.abilities[0]
+			// var sprite = data.sprites
+			console.log(data3)
+			// var name = data[0].url
+
+			// $("body").append("<img src="	+ sprite +	">");
+			$("body").append("<h3>"	+ nature +	"</h3>");
+
+
+}
+}
+})

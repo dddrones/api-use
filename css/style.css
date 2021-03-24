@@ -1,5 +1,23 @@
+* {
+	box-sizing: border-box;
+}
+html,body {
+	min-height: 100vh;
+	margin: 20px;
+}
+img {
+	max-width: 100%;
+}
+.one,.two,.three {
+	margin: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 .pod	{
-width:	600px;
-margin:	auto;
-padding:	30px;
+	width: 600px;
+	margin:	auto;
+	padding: 30px;
+}
+.h2 {
+	text-align: center;
 }
