@@ -4,5 +4,6 @@ In this basic webpage you have a button. If you click on the button, you get a P
 
 credits
 * [pokeapi](https://pokeapi.co/)
-* [User felix and their image code](https://stackoverflow.com/questions/22113331/select-random-image-files-from-folder-jquery)
+* [user felix and their image code](https://stackoverflow.com/questions/22113331/select-random-image-files-from-folder-jquery)
 * [google fonts](https://fonts.google.com/specimen/Dela+Gothic+One?preview.text_type=custom#pairings/)
+* [sprites by the Pokemon Company used via fair use](https://www.pokemon.com/us/about-pokemon/)
