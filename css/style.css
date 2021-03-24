@@ -4,20 +4,52 @@
 html,body {
 	min-height: 100vh;
 	margin: 20px;
+	background-color: #3F629F;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+
 }
-img {
-	max-width: 100%;
+h1{
+	font-family: 'Dela Gothic One', cursive;
+	text-align: center;
 }
-.one,.two,.three {
-	margin: auto;
-    padding-left: 50px;
-    padding-right: 50px;
+h4 {
+	font-family: 'Open Sans', sans-serif;
 }
-.pod	{
-	width: 600px;
+
+.grid-parent {
+    width: 600px;
 	margin:	auto;
 	padding: 30px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+
 }
-.h2 {
+
+.item-one {
+    background-color: #BA3838;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.item-two {
+    background-color: #33B948;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.item-three {
+    background-color: #D5BE3D;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+}
+.button {
 	text-align: center;
+	margin-left: 50%;
+}
+footer{
+	margin-bottom: 0px;
+}
+a {
+	text-decoration: none;
+	color: gray;
 }

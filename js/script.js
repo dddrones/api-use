@@ -1,13 +1,12 @@
 var xhr = new XMLHttpRequest();
-var url = "https://pokeapi.co/api/v2/pokemon/?limit=809"
+var url = "https://pokeapi.co/api/v2/pokemon/?limit=809";
 
 $("#submit").on("click",function() {
-	// ($"body").empty()
 
 // 	query = "&count=3"
-// 	callAPI()
+	callAPI()
 
-// function callAPI () {
+function callAPI () {
 // 	var url = url1 + ur12 + url3 + query;
 
 	xhr.open("GET", url, true);
@@ -15,6 +14,7 @@ $("#submit").on("click",function() {
 
 	xhr.onload = function(){
 		if(xhr.status == 200){
+
 			// document.write(xhr.responseText)	
 
 			console.log(xhr.responseText);
@@ -29,7 +29,7 @@ $("#submit").on("click",function() {
 
 			// console.log(data.ability)
 
-			$("body").append("<h2>"	+ name +	"</h2>");
+			$("#one").text(name);
 
 
 }}
@@ -42,6 +42,8 @@ var url2 = "https://pokeapi.co/api/v2/ability/?limit=327"
 
 	xhr2.onload = function(){
 		if(xhr2.status == 200){
+
+			// ($"#two").empty()
 			// document.write(xhr.responseText)	
 
 			console.log(xhr2.responseText);
@@ -56,7 +58,7 @@ var url2 = "https://pokeapi.co/api/v2/ability/?limit=327"
 
 			// console.log(data.ability)
 			// $("body").append("<img src="	+ sprite +	">");
-			$("body").append("<h3>"	+ ability +	"</h3>");
+			$("#two").text(ability);
 
 
 }
@@ -71,6 +73,7 @@ var url3 = "https://pokeapi.co/api/v2/nature/?limit=25"
 
 	xhr3.onload = function(){
 		if(xhr3.status == 200){
+			// ($"#three").empty()
 			// document.write(xhr.responseText)	
 
 			console.log(xhr3.responseText);
@@ -81,12 +84,16 @@ var url3 = "https://pokeapi.co/api/v2/nature/?limit=25"
 			// var ability = data.abilities[0]
 			// var sprite = data.sprites
 			console.log(data3)
-			// var name = data[0].url
 
-			// $("body").append("<img src="	+ sprite +	">");
-			$("body").append("<h3>"	+ nature +	"</h3>");
+			$("#three").text(nature);
 
 
 }
 }
-})
+
+var randomNum = Math.floor((Math.random()*809)+1);
+$('#my_image').attr('src', 'sprites-master/sprites/pokemon/' + randomNum + '.png');
+
+
+
+}})
